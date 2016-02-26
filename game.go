@@ -4,37 +4,37 @@ import "fmt"
 
 // BikeOne is the bike object. It will keep track of its positions
 type BikeOne struct {
-	x       int32
-	y       int32
+	X       int32
+	Y       int32
 	prevPos []*BikeOne
 }
 
 func (b *BikeOne) start() {
-	b.prevPos = append(b.prevPos, &BikeOne{x: b.x, y: b.y})
+	b.prevPos = append(b.prevPos, &BikeOne{X: b.X, Y: b.Y})
 }
 
 func (b *BikeOne) moveUp() {
-	b.y++
-	b.prevPos = append(b.prevPos, &BikeOne{x: b.x, y: b.y})
+	b.Y++
+	b.prevPos = append(b.prevPos, &BikeOne{X: b.X, Y: b.Y})
 }
 
 func (b *BikeOne) moveDown() {
-	b.y--
-	b.prevPos = append(b.prevPos, &BikeOne{x: b.x, y: b.y})
+	b.Y--
+	b.prevPos = append(b.prevPos, &BikeOne{X: b.X, Y: b.Y})
 }
 
 func (b *BikeOne) moveRight() {
-	b.x++
-	b.prevPos = append(b.prevPos, &BikeOne{x: b.x, y: b.y})
+	b.X++
+	b.prevPos = append(b.prevPos, &BikeOne{X: b.X, Y: b.Y})
 }
 
 func (b *BikeOne) moveLeft() {
-	b.x--
-	b.prevPos = append(b.prevPos, &BikeOne{x: b.x - 1, y: b.y})
+	b.X--
+	b.prevPos = append(b.prevPos, &BikeOne{X: b.X, Y: b.Y})
 }
 
 func main() {
-	bike := &BikeOne{x: 0, y: 0}
+	bike := &BikeOne{X: 0, Y: 0}
 
 	bike.start()
 
